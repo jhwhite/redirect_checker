@@ -19,7 +19,6 @@ def get_status_code(host, path="/"):
     except StandardError:
         return None
 
-
 base_url = #"INSERT base_url HERE"
 
 with open(filename) as f:
