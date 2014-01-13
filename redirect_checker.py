@@ -20,9 +20,7 @@ def get_status_code(host, path="/"):
         return None
 
 
-initial_path = #"INSERT ROOT URL HERE"
-
-#print get_status_code("uvahealth.com", "/Allergy")
+base_url = #"INSERT base_url HERE"
 
 with open(filename) as f:
 	for line in f:
@@ -31,5 +29,5 @@ with open(filename) as f:
 		#path = initial_path+line
 		#print path
 		#print type(path)
-		print get_status_code(initial_path, line)
+		print get_status_code(base_url, line)
 
