@@ -13,3 +13,16 @@ From the command line run python redirect_checker.py name_of_file.txt.
 
 The txt file should be in the format of: 
 /path
+
+Example.
+If you want to check www.example.com
+
+Change line 23 from
+    base_url = #"INSERT base_url HERE"
+to
+    base_url = "example.com"
+    
+In the external file:
+    /services
+    /about
+    /contact
