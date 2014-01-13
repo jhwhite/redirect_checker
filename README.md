@@ -1,5 +1,5 @@
 #redirect_checker
-_
+
 
 Python tool that checks status codes for a site
 
