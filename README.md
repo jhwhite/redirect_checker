@@ -3,9 +3,6 @@
 
 Python tool that checks status codes for a site
 
-To use
--
-#Redirect checker
 This checker requires a base URL to be input on line 23.
 
 To run:
