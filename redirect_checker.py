@@ -19,14 +19,24 @@ def get_status_code(host, path="/"):
     except StandardError:
         return None
 
-base_url = #"INSERT base_url HERE"
-
+base_url = "uvahealth.com"
+i = 0
+b = [[0,0], [0,0]]
+a = []
 with open(filename) as f:
-	for line in f:
-		line = line.replace("\n", "")
-		#print line
-		#path = initial_path+line
-		#print path
-		#print type(path)
-		print get_status_code(base_url, line)
+    for line in f:
+        line = line.replace("\n", "")
+        #print line
+        path = base_url+line
+        #print path
+        #print type(path)
+        x = get_status_code(base_url, line)
+        if x != 301 :
+            a.append(x)
+            #a[i][i] = x
+            #a[i][i+1] = line
+            i += 1
+        print str(x) + ' ' + path
 
+print str(i) + " non-301 redirects found."
+print a
