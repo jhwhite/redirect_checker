@@ -21,7 +21,8 @@ def get_status_code(host, path="/"):
 
 target = open(output, 'w')
 
-base_url = "URL"
+print "What is the domain you want to check?"
+base_url = raw_input()
 i = 0
 non_301 = ""
 with open(filename) as f:
