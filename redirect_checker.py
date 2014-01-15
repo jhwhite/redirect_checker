@@ -21,7 +21,7 @@ def get_status_code(host, path="/"):
 
 target = open(output, 'w')
 
-base_url = "uvahealth.com"
+base_url = "URL"
 i = 0
 non_301 = ""
 with open(filename) as f:
