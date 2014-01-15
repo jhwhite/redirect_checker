@@ -23,8 +23,7 @@ target = open('output.txt', 'w')
 
 base_url = "uvahealth.com"
 i = 0
-a = []
-b = []
+non_301 = ""
 with open(filename) as f:
     for line in f:
         line = line.replace("\n", "")
@@ -34,7 +33,7 @@ with open(filename) as f:
         #print type(path)
         status_code = get_status_code(base_url, line)
         if status_code != 301 :
-            non_301 = str(status_code) + ' ' + path + '\n'
+            non_301 = non_301 + str(status_code) + ' ' + path + '\n'
             #a.append(status_code)
             #b.append(path)
             i += 1
