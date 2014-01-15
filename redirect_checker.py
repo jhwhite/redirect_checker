@@ -2,7 +2,7 @@ import httplib
 from sys import argv
 # -*- coding: utf-8 -*-
 
-script, filename = argv
+script, filename, output = argv
 
 #This function comes from http://stackoverflow.com/questions/1140661/python-get-http-response-code-from-a-url
 #author is Evan Fosmark
@@ -19,7 +19,7 @@ def get_status_code(host, path="/"):
     except StandardError:
         return None
 
-target = open('output.txt', 'w')
+target = open(output, 'w')
 
 base_url = "uvahealth.com"
 i = 0
@@ -34,15 +34,11 @@ with open(filename) as f:
         status_code = get_status_code(base_url, line)
         if status_code != 301 :
             non_301 = non_301 + str(status_code) + ' ' + path + '\n'
-            #a.append(status_code)
-            #b.append(path)
             i += 1
-        print str(status_code) + ' ' + path
+        #print str(status_code) + ' ' + path
         target.write(str(status_code) + ' ' + path + '\n')
 
-print str(i) + " non-301 redirects found."
-#print a
-#print b
+#print str(i) + " non-301 redirects found."
 target.write(str(i) + " non-301 redirects found.\n")
 target.write(non_301)
 target.close()
