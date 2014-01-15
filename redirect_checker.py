@@ -24,6 +24,7 @@ target = open('output.txt', 'w')
 base_url = "uvahealth.com"
 i = 0
 a = []
+b = []
 with open(filename) as f:
     for line in f:
         line = line.replace("\n", "")
@@ -31,14 +32,18 @@ with open(filename) as f:
         path = base_url+line
         #print path
         #print type(path)
-        x = get_status_code(base_url, line)
-        if x != 301 :
-            a.append(x)
+        status_code = get_status_code(base_url, line)
+        if status_code != 301 :
+            non_301 = str(status_code) + ' ' + path + '\n'
+            #a.append(status_code)
+            #b.append(path)
             i += 1
-        print str(x) + ' ' + path
-        target.write(str(x) + ' ' + path + '\n')
+        print str(status_code) + ' ' + path
+        target.write(str(status_code) + ' ' + path + '\n')
 
 print str(i) + " non-301 redirects found."
-print a
-target.write(str(i) + " non-301 redirects found.")
+#print a
+#print b
+target.write(str(i) + " non-301 redirects found.\n")
+target.write(non_301)
 target.close()
