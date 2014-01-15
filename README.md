@@ -16,10 +16,9 @@ The txt file should be in the format of:
 Example.
 If you want to check www.example.com
 
-Change the base _ url variable to the domain you are checking.
+The script now prompts the user asking what domain they want to check.
 
->base_url = #"URL"
+For example:
+>What is the domain you want to check?
 
-to
-
->base_url = "example.com"
+>example.com
