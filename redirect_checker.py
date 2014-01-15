@@ -19,9 +19,10 @@ def get_status_code(host, path="/"):
     except StandardError:
         return None
 
+target = open('output.txt', 'w')
+
 base_url = "uvahealth.com"
 i = 0
-b = [[0,0], [0,0]]
 a = []
 with open(filename) as f:
     for line in f:
@@ -33,10 +34,11 @@ with open(filename) as f:
         x = get_status_code(base_url, line)
         if x != 301 :
             a.append(x)
-            #a[i][i] = x
-            #a[i][i+1] = line
             i += 1
         print str(x) + ' ' + path
+        target.write(str(x) + ' ' + path + '\n')
 
 print str(i) + " non-301 redirects found."
 print a
+target.write(str(i) + " non-301 redirects found.")
+target.close()
