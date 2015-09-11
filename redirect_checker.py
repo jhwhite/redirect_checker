@@ -15,7 +15,7 @@ with open(filename) as f:
     for line in f:
         line = line.replace("\n", "")
         path = base_url+line
-        response = requests.get(path)
+        response = requests.head(path)
         status_code = response.status_code
         if status_code != 301 :
             non_301 = non_301 + str(status_code) + ' ' + path + '\n'
