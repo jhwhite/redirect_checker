@@ -7,8 +7,8 @@ script, filename, output = argv
 
 target = open(output, 'w')
 
-print "What is the domain you want to check?"
-base_url = raw_input()
+print("What is the domain you want to check?")
+base_url = input()
 i = 0
 non_301 = ""
 with open(filename) as f:
